@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculateur de Royalties Ebook — KDP & Kobo | Dev du Sud</title>
+<meta name="description" content="Calculez en 5 secondes ce que vous gagnez réellement par vente de livre numérique : royalties Amazon KDP (35 % ou 70 %) et Kobo (45 % ou 70 %).">
+<style>
+  :root { --accent: #4f46e5; --bg: #f8fafc; --ink: #0f172a; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+  header { text-align: center; margin-bottom: 18px; }
+  .logo { font-weight: 800; color: var(--accent); font-size: 1.3rem; }
+  h1 { font-size: 1.5rem; margin: 8px 0 4px; }
+  .card { background: #fff; border-radius: 14px; padding: 22px; box-shadow: 0 1px 5px rgba(0,0,0,.07); margin-bottom: 16px; }
+  label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: .95rem; }
+  input, select { width: 100%; padding: 10px 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+  input:focus, select:focus { outline: none; border-color: var(--accent); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .res { background: #eef2ff; border-radius: 12px; padding: 16px; margin-top: 16px; }
+  .res .big { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .res table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .res td { padding: 6px 4px; border-bottom: 1px solid #dbe4ff; font-size: .92rem; }
+  .res td:last-child { text-align: right; font-weight: 700; }
+  .note { font-size: .8rem; color: #64748b; margin-top: 10px; }
+  footer { text-align: center; color: #94a3b8; font-size: .85rem; padding: 20px 0; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">⚡ Dev du Sud</div>
+    <h1>Calculateur de Royalties Ebook</h1>
+    <p>Ce que vous gagnez <strong>réellement</strong> par vente, frais inclus.</p>
+  </header>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Prix de vente (€)</label>
+        <input type="number" id="prix" value="4.99" min="0" step="0.01">
+      </div>
+      <div>
+        <label>Plateforme</label>
+        <select id="plateforme">
+          <option value="kdp">Amazon KDP</option>
+          <option value="kobo">Kobo Writing Life</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="kdpOpt">
+      <label>Palier de royalties KDP</label>
+      <select id="palier">
+        <option value="70">70 % (prix entre 2,99 € et 9,99 €)</option>
+        <option value="35">35 % (autres prix)</option>
+      </select>
+    </div>
+
+    <div class="res" id="res"></div>
+    <div class="note">
+      Amazon KDP : palier 70 % = 70 % du prix HT − frais de livraison (≈ 0,06 €/Mo, plafonné 0,12 €) − TVA (selon pays). Kobo : 70 % pour un prix ≥ 2,99 € et ≤ 9,99 €, sinon 45 %. Valeurs indicatives — vérifiez les barèmes officiels au moment de la publication.
+    </div>
+  </div>
+
+  <footer>
+    <p>Outil gratuit · <a href="../">Dev du Sud — Guides d'achat honnêtes</a></p>
+    <p>Publiez vos livres vous-même : <a href="https://kdp.amazon.com">Amazon KDP</a> · <a href="https://writinglife.kobo.com">Kobo Writing Life</a></p>
+  </footer>
+</div>
+<script>
+function calc() {
+  const prix = parseFloat(document.getElementById("prix").value) || 0;
+  const plat = document.getElementById("plateforme").value;
+  const palier = parseFloat(document.getElementById("palier").value);
+  const kdpOpt = document.getElementById("kdpOpt");
+  kdpOpt.style.display = plat === "kdp" ? "block" : "none";
+
+  let taux = 0.45;
+  if (plat === "kdp") taux = palier / 100;
+  else taux = (prix >= 2.99 && prix <= 9.99) ? 0.70 : 0.45;
+
+  const tva = prix * (1 / 6); // approximation TVA 20% incluse
+  const ht = prix - tva;
+  let frais = 0;
+  if (plat === "kdp") {
+    frais = Math.min(0.12, 0.0006 * ht * 100 / 1024 * 0); // simplifié
+    frais = 0.05; // frais de livraison moyen indicatif
+  }
+  const net = (ht - frais) * taux;
+
+  const res = document.getElementById("res");
+  res.innerHTML = `
+    <div class="big">${net.toFixed(2)} € / vente</div>
+    <table>
+      <tr><td>Prix public TTC</td><td>${prix.toFixed(2)} €</td></tr>
+      <tr><td>Prix HT (TVA ≈ 20 %)</td><td>${ht.toFixed(2)} €</td></tr>
+      <tr><td>Frais de livraison (indicatif)</td><td>${plat === "kdp" ? frais.toFixed(2) : "0,00"} €</td></tr>
+      <tr><td>Taux de royalties</td><td>${Math.round(taux * 100)} %</td></tr>
+      <tr><td><strong>Net perçu</strong></td><td><strong>${net.toFixed(2)} €</strong></td></tr>
+    </table>
+    <div class="note">Pour ${net.toFixed(2)} €/mois passif : ${plat === "kdp" ? (Math.ceil(100 / net)) : (Math.ceil(100 / net))} ventes/mois à ce prix.</div>
+  `;
+}
+document.getElementById("prix").addEventListener("input", calc);
+document.getElementById("plateforme").addEventListener("change", calc);
+document.getElementById("palier").addEventListener("change", calc);
+calc();
+</script>
+</body>
+</html>

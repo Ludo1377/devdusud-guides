@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dev du Sud — Guides d'achat honnêtes</title>
+<meta name="description" content="43 guides d'achat comparatifs, honnêtes et indépendants, en 4 langues : français, anglais, espagnol, portugais.">
+<style>
+  :root { --ink:#0f172a; --muted:#64748b; --accent:#4f46e5; --bg:#f8fafc; --card:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  .wrap { max-width: 980px; margin:0 auto; padding:24px 18px 60px; }
+  header { text-align:center; padding:56px 0 36px; }
+  header .logo { font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
+  h1 { font-size:2.3rem; margin:14px 0 10px; line-height:1.2; }
+  header p { color:var(--muted); max-width:560px; margin:0 auto; }
+  .langs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:26px 0 8px; }
+  .langs span { background:#eef2ff; color:#4338ca; font-weight:700; padding:6px 16px; border-radius:999px; font-size:.9rem; }
+  h2 { font-size:1.4rem; margin:44px 0 18px; text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid #e2e8f0; border-radius:14px; padding:18px 20px;
+          text-decoration:none; color:var(--ink); transition:.15s; display:flex; flex-direction:column; gap:4px; }
+  .card:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08); border-color:var(--accent); }
+  .card .t { font-weight:700; }
+  .card .s { color:var(--muted); font-size:.85rem; }
+  .flag { font-size:1.1rem; }
+  .cta { text-align:center; margin:44px 0 8px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; font-weight:700; padding:14px 34px;
+         border-radius:12px; text-decoration:none; }
+  .btn:hover { opacity:.9; }
+  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:56px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Dev du Sud</div>
+    <h1>Des guides d'achat honnêtes,<br>dans 4 langues</h1>
+    <p>Comparatifs indépendants, testés et mis à jour chaque trimestre. Transparence totale : nos liens d'affiliation sont indiqués, nos recommandations restent libres.</p>
+    <div class="langs">
+      <span>🇫🇷 Français — 13 guides</span>
+      <span>🇬🇧 English — 10 guides</span>
+      <span>🇪🇸 Español — 10 guides</span>
+      <span>🇧🇷 Português — 10 guides</span>
+    </div>
+  </header>
+
+  <h2>🇫🇷 Guides français</h2>
+  <div class="grid" id="fr"></div>
+
+  <h2>🌍 Autres langues</h2>
+  <div class="grid" id="other"></div>
+
+  <div class="cta">
+    <a class="btn" href="https://revedebiz.gumroad.com/">🛍️ Notre boutique de produits numériques</a>
+  </div>
+
+  <footer>
+    <p>Dev du Sud — Guides d'achat honnêtes © 2026</p>
+    <p><a href="sitemap.xml">Plan du site</a> · Mis à jour le 30 septembre 2026</p>
+  </footer>
+</div>
+<script>
+const themes = {
+  "top10-ssd": ["Les 10 Meilleurs SSD Externes", "Vitesse, fiabilité, prix"],
+  "casques-audio": ["Les 10 Meilleurs Casques Audio", "Bluetooth, ANC, gaming"],
+  "machines-a-cafe": ["Les 10 Meilleures Machines à Café", "Grain, capsules, espresso"],
+  "aspirateurs-robots": ["Les 10 Meilleurs Aspirateurs Robots", "Laser, autovidage, lavage"],
+  "smartphones": ["Les 10 Meilleurs Smartphones", "Caméra, batterie, budget"],
+  "montres-connectees": ["Les 10 Meilleures Montres Connectées", "Sport, santé, autonomie"],
+  "televiseurs": ["Les 10 Meilleurs Téléviseurs", "OLED, QLED, 4K"],
+  "imprimantes": ["Les 10 Meilleures Imprimantes", "Tank, laser, multifonction"],
+  "enceintes-bluetooth": ["Les 10 Meilleures Enceintes Bluetooth", "Portables, maison, fête"],
+  "outils-bricolage": ["Les 10 Meilleurs Outils de Bricolage", "Perçage, vissage, kits"],
+  "gaming": ["Les 10 Meilleurs Accessoires Gaming", "Souris, clavier, manettes"],
+  "drones": ["Les 10 Meilleurs Drones", "Débutant, photo, FPV"],
+  "velos-electriques": ["Les 10 Meilleurs Vélos Électriques", "Ville, VTT, pliant"]
+};
+const fr = document.getElementById("fr");
+for (const [slug, [t, s]] of Object.entries(themes)) {
+  fr.innerHTML += `<a class="card" href="${slug}/"><span class="flag">🇫🇷</span><span class="t">${t}</span><span class="s">${s}</span></a>`;
+}
+const langs = [
+  ["en", "🇬🇧 English", [["top10-ssd","Best External SSDs"],["casques-audio","Best Headphones"],["machines-a-cafe","Best Coffee Machines"],["aspirateurs-robots","Best Robot Vacuums"],["smartphones","Best Smartphones"],["montres-connectees","Best Smartwatches"],["televiseurs","Best TVs"],["imprimantes","Best Printers"],["enceintes-bluetooth","Best Bluetooth Speakers"],["outils-bricolage","Best DIY Tools"]]],
+  ["es", "🇪🇸 Español", [["top10-ssd","Mejores SSD Externos"],["casques-audio","Mejores Auriculares"],["machines-a-cafe","Mejores Cafeteras"],["aspirateurs-robots","Mejores Robots Aspiradores"],["smartphones","Mejores Smartphones"],["montres-connectees","Mejores Relojes Inteligentes"],["televiseurs","Mejores Televisores"],["imprimantes","Mejores Impresoras"],["enceintes-bluetooth","Mejores Altavoces Bluetooth"],["outils-bricolage","Mejores Herramientas"]]],
+  ["pt", "🇧🇷 Português", [["top10-ssd","Melhores SSDs Externos"],["casques-audio","Melhores Fones"],["machines-a-cafe","Melhores Máquinas de Café"],["aspirateurs-robots","Melhores Robôs Aspiradores"],["smartphones","Melhores Smartphones"],["montres-connectees","Melhores Relógios"],["televiseurs","Melhores TVs"],["imprimantes","Melhores Impressoras"],["enceintes-bluetooth","Melhores Caixas Bluetooth"],["outils-bricolage","Melhores Ferramentas"]]]
+];
+const other = document.getElementById("other");
+for (const [lang, label, items] of langs) {
+  other.innerHTML += `<div class="card" style="cursor:default"><span class="t">${label}</span></div>`;
+  for (const [slug, t] of items) {
+    other.innerHTML += `<a class="card" href="${lang}/${slug}/"><span class="flag">${label.split(" ")[0]}</span><span class="t">${t}</span><span class="s">${lang}/${slug}/</span></a>`;
+  }
+}
+</script>
+</body>
+</html>

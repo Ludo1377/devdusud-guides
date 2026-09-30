@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dev du Sud — Guides d'achat honnêtes</title>
-<meta name="description" content="43 guides d'achat comparatifs, honnêtes et indépendants, en 4 langues : français, anglais, espagnol, portugais.">
+<meta name="description" content="80 guides d'achat comparatifs, honnêtes et indépendants, en 4 langues : français, anglais, espagnol, portugais.">
 <style>
   :root { --ink:#0f172a; --muted:#64748b; --accent:#4f46e5; --bg:#f8fafc; --card:#fff; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -38,10 +38,10 @@
     <h1>Des guides d'achat honnêtes,<br>dans 4 langues</h1>
     <p>Comparatifs indépendants, testés et mis à jour chaque trimestre. Transparence totale : nos liens d'affiliation sont indiqués, nos recommandations restent libres.</p>
     <div class="langs">
-      <span>🇫🇷 Français — 13 guides</span>
-      <span>🇬🇧 English — 10 guides</span>
-      <span>🇪🇸 Español — 10 guides</span>
-      <span>🇧🇷 Português — 10 guides</span>
+      <span>🇫🇷 Français — 20 guides</span>
+      <span>🇬🇧 English — 20 guides</span>
+      <span>🇪🇸 Español — 20 guides</span>
+      <span>🇧🇷 Português — 20 guides</span>
     </div>
   </header>
 
@@ -74,16 +74,47 @@ const themes = {
   "outils-bricolage": ["Les 10 Meilleurs Outils de Bricolage", "Perçage, vissage, kits"],
   "gaming": ["Les 10 Meilleurs Accessoires Gaming", "Souris, clavier, manettes"],
   "drones": ["Les 10 Meilleurs Drones", "Débutant, photo, FPV"],
-  "velos-electriques": ["Les 10 Meilleurs Vélos Électriques", "Ville, VTT, pliant"]
+  "velos-electriques": ["Les 10 Meilleurs Vélos Électriques", "Ville, VTT, pliant"],
+  "friteuses-sans-huile": ["Les 10 Meilleures Friteuses Sans Huile", "Air fryers, famille, budget"],
+  "purificateurs-dair": ["Les 10 Meilleurs Purificateurs d'Air", "Allergies, pollution, chambre"],
+  "velos-dappartement": ["Les 10 Meilleurs Vélos d'Appartement", "Cardio, silencieux, pliables"],
+  "machines-a-pain": ["Les 10 Meilleures Machines à Pain", "Baguettes, pain maison"],
+  "ventilateurs": ["Les 10 Meilleurs Ventilateurs", "Chaleur, silence, grands volumes"],
+  "chauffages-dappoint": ["Les 10 Meilleurs Chauffages d'Appoint", "Hiver, économies d'énergie"],
+  "robots-cuisine": ["Les 10 Meilleurs Robots de Cuisine", "Multifonctions, cuisson, pétrissage"]
 };
 const fr = document.getElementById("fr");
 for (const [slug, [t, s]] of Object.entries(themes)) {
   fr.innerHTML += `<a class="card" href="${slug}/"><span class="flag">🇫🇷</span><span class="t">${t}</span><span class="s">${s}</span></a>`;
 }
 const langs = [
-  ["en", "🇬🇧 English", [["top10-ssd","Best External SSDs"],["casques-audio","Best Headphones"],["machines-a-cafe","Best Coffee Machines"],["aspirateurs-robots","Best Robot Vacuums"],["smartphones","Best Smartphones"],["montres-connectees","Best Smartwatches"],["televiseurs","Best TVs"],["imprimantes","Best Printers"],["enceintes-bluetooth","Best Bluetooth Speakers"],["outils-bricolage","Best DIY Tools"]]],
-  ["es", "🇪🇸 Español", [["top10-ssd","Mejores SSD Externos"],["casques-audio","Mejores Auriculares"],["machines-a-cafe","Mejores Cafeteras"],["aspirateurs-robots","Mejores Robots Aspiradores"],["smartphones","Mejores Smartphones"],["montres-connectees","Mejores Relojes Inteligentes"],["televiseurs","Mejores Televisores"],["imprimantes","Mejores Impresoras"],["enceintes-bluetooth","Mejores Altavoces Bluetooth"],["outils-bricolage","Mejores Herramientas"]]],
-  ["pt", "🇧🇷 Português", [["top10-ssd","Melhores SSDs Externos"],["casques-audio","Melhores Fones"],["machines-a-cafe","Melhores Máquinas de Café"],["aspirateurs-robots","Melhores Robôs Aspiradores"],["smartphones","Melhores Smartphones"],["montres-connectees","Melhores Relógios"],["televiseurs","Melhores TVs"],["imprimantes","Melhores Impressoras"],["enceintes-bluetooth","Melhores Caixas Bluetooth"],["outils-bricolage","Melhores Ferramentas"]]]
+  ["en", "🇬🇧 English", [
+    ["top10-ssd","Best External SSDs"],["casques-audio","Best Headphones"],["machines-a-cafe","Best Coffee Machines"],
+    ["aspirateurs-robots","Best Robot Vacuums"],["smartphones","Best Smartphones"],["montres-connectees","Best Smartwatches"],
+    ["televiseurs","Best TVs"],["imprimantes","Best Printers"],["enceintes-bluetooth","Best Bluetooth Speakers"],
+    ["outils-bricolage","Best DIY Tools"],["gaming","Best Gaming Accessories"],["drones","Best Drones"],
+    ["velos-electriques","Best E-Bikes"],["friteuses-sans-huile","Best Air Fryers"],["purificateurs-dair","Best Air Purifiers"],
+    ["velos-dappartement","Best Exercise Bikes"],["machines-a-pain","Best Bread Makers"],["ventilateurs","Best Fans"],
+    ["chauffages-dappoint","Best Space Heaters"],["robots-cuisine","Best Cooking Robots"]
+  ]],
+  ["es", "🇪🇸 Español", [
+    ["top10-ssd","Mejores SSD Externos"],["casques-audio","Mejores Auriculares"],["machines-a-cafe","Mejores Cafeteras"],
+    ["aspirateurs-robots","Mejores Robots Aspiradores"],["smartphones","Mejores Smartphones"],["montres-connectees","Mejores Relojes Inteligentes"],
+    ["televiseurs","Mejores Televisores"],["imprimantes","Mejores Impresoras"],["enceintes-bluetooth","Mejores Altavoces Bluetooth"],
+    ["outils-bricolage","Mejores Herramientas"],["gaming","Mejores Accesorios Gaming"],["drones","Mejores Drones"],
+    ["velos-electriques","Mejores Bicis Eléctricas"],["friteuses-sans-huile","Mejores Freidoras de Aire"],["purificateurs-dair","Mejores Purificadores de Aire"],
+    ["velos-dappartement","Mejores Bicicletas Estáticas"],["machines-a-pain","Mejores Panificadoras"],["ventilateurs","Mejores Ventiladores"],
+    ["chauffages-dappoint","Mejores Calefactores"],["robots-cuisine","Mejores Robots de Cocina"]
+  ]],
+  ["pt", "🇧🇷 Português", [
+    ["top10-ssd","Melhores SSDs Externos"],["casques-audio","Melhores Fones"],["machines-a-cafe","Melhores Máquinas de Café"],
+    ["aspirateurs-robots","Melhores Robôs Aspiradores"],["smartphones","Melhores Smartphones"],["montres-connectees","Melhores Relógios"],
+    ["televiseurs","Melhores TVs"],["imprimantes","Melhores Impressoras"],["enceintes-bluetooth","Melhores Caixas Bluetooth"],
+    ["outils-bricolage","Melhores Ferramentas"],["gaming","Melhores Acessórios Gamer"],["drones","Melhores Drones"],
+    ["velos-electriques","Melhores Bicicletas Elétricas"],["friteuses-sans-huile","Melhores Air Fryers"],["purificateurs-dair","Melhores Purificadores de Ar"],
+    ["velos-dappartement","Melhores Bicicletas Ergométricas"],["machines-a-pain","Melhores Máquinas de Pão"],["ventilateurs","Melhores Ventiladores"],
+    ["chauffages-dappoint","Melhores Aquecedores Portáteis"],["robots-cuisine","Melhores Robôs de Cozinha"]
+  ]]
 ];
 const other = document.getElementById("other");
 for (const [lang, label, items] of langs) {

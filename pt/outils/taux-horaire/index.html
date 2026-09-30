@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de valor por hora freelancer</title>
+<meta name="description" content="Calcule o valor mínimo por hora que você deve cobrar para alcançar sua meta de renda como freelancer.">
+<link rel="canonical" href="https://ludo1377.github.io/devdusud-guides/outils/pt/taux-horaire/index.html">
+
+<style>
+:root{--accent:#10b981;--bg:#0f172a;--card:#1e293b;--ink:#e2e8f0}
+*{margin:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:40px 20px 60px}
+h1{font-size:1.8rem;margin-bottom:6px}
+.sub{color:#94a3b8;margin-bottom:26px}
+.panel{background:var(--card);border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #334155}
+label{display:block;font-size:.9rem;color:#94a3b8;margin:14px 0 4px}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #475569;background:#0f172a;color:var(--ink);font-size:1rem}
+button{display:block;width:100%;padding:14px;border:0;border-radius:12px;background:var(--accent);color:#0f172a;font-weight:700;font-size:1.05rem;margin-top:20px;cursor:pointer}
+button:hover{filter:brightness(1.12)}
+.result{background:var(--accent);color:#0f172a;border-radius:14px;padding:20px;margin-top:22px;font-weight:600;display:none;white-space:pre-line}
+.result.on{display:block}
+.row{display:flex;gap:12px}
+.row>div{flex:1}
+.cta{margin-top:26px;text-align:center}
+.cta a{display:inline-block;background:#334155;color:#e2e8f0;text-decoration:none;padding:11px 20px;border-radius:10px;margin:6px;font-size:.95rem}
+.cta a:hover{background:#475569}
+.foot{text-align:center;color:#64748b;font-size:.82rem;margin-top:40px}
+.note{font-size:.8rem;color:#64748b;margin-top:8px}
+.names{margin-top:18px}
+.name{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:12px 16px;margin-bottom:8px;font-weight:600;cursor:pointer}
+.name:hover{border-color:var(--accent)}
+</style>
+
+</head>
+<body>
+<main>
+<h1>Simulador de valor por hora 💼</h1>
+<p class="sub">Quanto você deve cobrar por hora para viver da sua atividade?</p>
+
+<div class="panel">
+<label>Renda líquida desejada por mês (€)</label><input type="number" id="obj" value="2000">
+<label>Dias faturáveis por mês</label><input type="number" id="jours" value="18">
+<label>Horas faturáveis por dia</label><input type="number" id="heures" value="6">
+<label>Impostos/encargos estimados (%)</label><input type="number" id="charges" value="22">
+<button onclick="calc()">Calcular meu valor</button>
+</div>
+<div class="result" id="res"></div>
+<p class="note">Preveja ~22% de encargos sobre o faturamento, 2 semanas de férias e dias não faturáveis (prospecção, administração).</p>
+<div class="cta"><a href="https://revedebiz.gumroad.com/">O guia « Primeiros clientes » na Gumroad →</a><a href="https://revedebiz.gumroad.com/l/htczrj">Pack 25 prompts de negócio →</a></div>
+<p class="foot">Ferramenta gratuita Dev du Sud — simulação indicativa, não é consultoria contábil.</p>
+</main>
+<script>
+function calc(){
+  const obj=+document.getElementById('obj').value||2000,
+        jours=+document.getElementById('jours').value||18,
+        heures=+document.getElementById('heures').value||6,
+        charges=+document.getElementById('charges').value||22;
+  const brut=obj/(1-charges/100);
+  const a=(brut/(jours*heures)).toFixed(1),
+        b=(brut/jours).toFixed(0);
+  document.getElementById('res').textContent='🎯 Valor mínimo por hora: {a} €
+📆 Ou seja {b} € por dia faturável
+💡 Dica: iniciantes cobram 40-70 €/h, especialistas 80-150 €/h.'.replace('{a}',a).replace('{b}',b);
+  document.getElementById('res').classList.add('on');
+}
+calc();
+</script>
+</body>
+</html>

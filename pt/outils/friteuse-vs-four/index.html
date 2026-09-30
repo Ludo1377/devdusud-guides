@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air fryer vs forno: calcule sua economia</title>
+<meta name="description" content="Calcule quanto você economiza em eletricidade cozinhando com uma air fryer em vez de um forno tradicional.">
+<link rel="canonical" href="https://ludo1377.github.io/devdusud-guides/outils/pt/friteuse-vs-four/index.html">
+
+<style>
+:root{--accent:#f59e0b;--bg:#0f172a;--card:#1e293b;--ink:#e2e8f0}
+*{margin:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:40px 20px 60px}
+h1{font-size:1.8rem;margin-bottom:6px}
+.sub{color:#94a3b8;margin-bottom:26px}
+.panel{background:var(--card);border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #334155}
+label{display:block;font-size:.9rem;color:#94a3b8;margin:14px 0 4px}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #475569;background:#0f172a;color:var(--ink);font-size:1rem}
+button{display:block;width:100%;padding:14px;border:0;border-radius:12px;background:var(--accent);color:#0f172a;font-weight:700;font-size:1.05rem;margin-top:20px;cursor:pointer}
+button:hover{filter:brightness(1.12)}
+.result{background:var(--accent);color:#0f172a;border-radius:14px;padding:20px;margin-top:22px;font-weight:600;display:none;white-space:pre-line}
+.result.on{display:block}
+.row{display:flex;gap:12px}
+.row>div{flex:1}
+.cta{margin-top:26px;text-align:center}
+.cta a{display:inline-block;background:#334155;color:#e2e8f0;text-decoration:none;padding:11px 20px;border-radius:10px;margin:6px;font-size:.95rem}
+.cta a:hover{background:#475569}
+.foot{text-align:center;color:#64748b;font-size:.82rem;margin-top:40px}
+.note{font-size:.8rem;color:#64748b;margin-top:8px}
+.names{margin-top:18px}
+.name{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:12px 16px;margin-bottom:8px;font-weight:600;cursor:pointer}
+.name:hover{border-color:var(--accent)}
+</style>
+
+</head>
+<body>
+<main>
+<h1>Air fryer vs forno ⚡</h1>
+<p class="sub">Quanto você economiza de verdade por ano? Calcule em 30 segundos.</p>
+
+<div class="panel">
+<label>Preço do kWh (€)</label><input type="number" id="prix" value="0.25" step="0.01">
+<label>Potência da air fryer (W)</label><input type="number" id="puiss" value="1500">
+<label>Tempo médio de cozimento (min)</label><input type="number" id="duree" value="20">
+<label>Consumo do forno por refeição equivalente (kWh)</label><input type="number" id="four" value="2.5" step="0.1">
+<label>Usos por semana</label><input type="number" id="usage" value="4">
+<button onclick="calc()">Calcular minha economia</button>
+</div>
+<div class="result" id="res"></div>
+<p class="note">Estimativas com pré-aquecimento de 15 min a 2500 W e cozimento de 45 min. Preço médio do kWh na Europa: 0,25 €.</p>
+<div class="cta"><a href="../pt/friteuses-sans-huile/">Ver nossa comparação de air fryers →</a><a href="../pt/friteuses-sans-huile/guide-achat.html">Guia de compra de air fryer →</a></div>
+<p class="foot">Ferramenta gratuita Dev du Sud — estimativas indicativas, seu uso real pode variar.</p>
+</main>
+<script>
+function calc(){
+  const prix=+document.getElementById('prix').value||0.25,
+        puiss=+document.getElementById('puiss').value||1500,
+        duree=+document.getElementById('duree').value||20,
+        four=+document.getElementById('four').value||2.5,
+        usage=+document.getElementById('usage').value||4;
+  const kwAir=puiss/1000*duree/60;
+  const a=(kwAir*prix*usage*52).toFixed(1),
+        b=(four*prix*usage*52).toFixed(1),
+        c=(b-a).toFixed(1),
+        d=((four-kwAir)*0.055*usage*52).toFixed(1),
+        e=Math.round(c/1.5);
+  document.getElementById('res').textContent='🍟 Custo air fryer: {a} €/ano
+🔥 Custo forno: {b} €/ano
+💰 Economia: {c} €/ano
+🌍 CO2 evitado: {d} kg/ano
+☕ Cerca de {e} cafés grátis por ano!'.replace('{a}',a).replace('{b}',b).replace('{c}',c).replace('{d}',d).replace('{e}',e);
+  document.getElementById('res').classList.add('on');
+}
+calc();
+</script>
+</body>
+</html>

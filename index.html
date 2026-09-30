@@ -51,6 +51,9 @@
   <h2>🌍 Autres langues</h2>
   <div class="grid" id="other"></div>
 
+  <h2>🛠️ Outils gratuits</h2>
+  <div class="grid" id="tools"></div>
+
   <div class="cta">
     <a class="btn" href="https://revedebiz.gumroad.com/">🛍️ Notre boutique de produits numériques</a>
   </div>
@@ -122,6 +125,15 @@ for (const [lang, label, items] of langs) {
   for (const [slug, t] of items) {
     other.innerHTML += `<a class="card" href="${lang}/${slug}/"><span class="flag">${label.split(" ")[0]}</span><span class="t">${t}</span><span class="s">${lang}/${slug}/</span></a>`;
   }
+}
+const tools = document.getElementById("tools");
+const toolsData = [
+  ["outils/friteuse-vs-four/","⚡","Friteuse à air vs four","Calculez vos économies d'électricité en 30 secondes"],
+  ["outils/taux-horaire/","💼","Simulateur de taux horaire","Le taux minimum à facturer en freelance"],
+  ["outils/generateur-nom/","✨","Générateur de noms de business","10 idées de noms à chaque clic"]
+];
+for (const [href, icon, t, s] of toolsData) {
+  tools.innerHTML += `<a class="card" href="${href}"><span class="t">${icon} ${t}</span><span class="s">${s}</span></a>`;
 }
 </script>
 </body>

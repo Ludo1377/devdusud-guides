@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freidora de aire vs horno: calcula tu ahorro</title>
+<meta name="description" content="Calcula cuánto ahorras en electricidad cocinando con una freidora de aire en lugar de un horno tradicional.">
+<link rel="canonical" href="https://ludo1377.github.io/devdusud-guides/outils/es/friteuse-vs-four/index.html">
+
+<style>
+:root{--accent:#f59e0b;--bg:#0f172a;--card:#1e293b;--ink:#e2e8f0}
+*{margin:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:40px 20px 60px}
+h1{font-size:1.8rem;margin-bottom:6px}
+.sub{color:#94a3b8;margin-bottom:26px}
+.panel{background:var(--card);border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #334155}
+label{display:block;font-size:.9rem;color:#94a3b8;margin:14px 0 4px}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #475569;background:#0f172a;color:var(--ink);font-size:1rem}
+button{display:block;width:100%;padding:14px;border:0;border-radius:12px;background:var(--accent);color:#0f172a;font-weight:700;font-size:1.05rem;margin-top:20px;cursor:pointer}
+button:hover{filter:brightness(1.12)}
+.result{background:var(--accent);color:#0f172a;border-radius:14px;padding:20px;margin-top:22px;font-weight:600;display:none;white-space:pre-line}
+.result.on{display:block}
+.row{display:flex;gap:12px}
+.row>div{flex:1}
+.cta{margin-top:26px;text-align:center}
+.cta a{display:inline-block;background:#334155;color:#e2e8f0;text-decoration:none;padding:11px 20px;border-radius:10px;margin:6px;font-size:.95rem}
+.cta a:hover{background:#475569}
+.foot{text-align:center;color:#64748b;font-size:.82rem;margin-top:40px}
+.note{font-size:.8rem;color:#64748b;margin-top:8px}
+.names{margin-top:18px}
+.name{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:12px 16px;margin-bottom:8px;font-weight:600;cursor:pointer}
+.name:hover{border-color:var(--accent)}
+</style>
+
+</head>
+<body>
+<main>
+<h1>Freidora de aire vs horno ⚡</h1>
+<p class="sub">¿Cuánto ahorras de verdad cada año? Calcúlalo en 30 segundos.</p>
+
+<div class="panel">
+<label>Precio del kWh (€)</label><input type="number" id="prix" value="0.25" step="0.01">
+<label>Potencia de la freidora (W)</label><input type="number" id="puiss" value="1500">
+<label>Tiempo medio de cocción (min)</label><input type="number" id="duree" value="20">
+<label>Consumo del horno por comida equivalente (kWh)</label><input type="number" id="four" value="2.5" step="0.1">
+<label>Usos por semana</label><input type="number" id="usage" value="4">
+<button onclick="calc()">Calcular mi ahorro</button>
+</div>
+<div class="result" id="res"></div>
+<p class="note">Estimaciones con precalentamiento de 15 min a 2500 W y cocción de 45 min. Precio medio del kWh en España: 0,15 €.</p>
+<div class="cta"><a href="../es/friteuses-sans-huile/">Ver nuestra comparativa de freidoras →</a><a href="../es/friteuses-sans-huile/guide-achat.html">Guía de compra de freidoras →</a></div>
+<p class="foot">Herramienta gratuita Dev du Sud — estimaciones orientativas, tu uso real puede variar.</p>
+</main>
+<script>
+function calc(){
+  const prix=+document.getElementById('prix').value||0.25,
+        puiss=+document.getElementById('puiss').value||1500,
+        duree=+document.getElementById('duree').value||20,
+        four=+document.getElementById('four').value||2.5,
+        usage=+document.getElementById('usage').value||4;
+  const kwAir=puiss/1000*duree/60;
+  const a=(kwAir*prix*usage*52).toFixed(1),
+        b=(four*prix*usage*52).toFixed(1),
+        c=(b-a).toFixed(1),
+        d=((four-kwAir)*0.055*usage*52).toFixed(1),
+        e=Math.round(c/1.5);
+  document.getElementById('res').textContent='🍟 Coste freidora: {a} €/año
+🔥 Coste horno: {b} €/año
+💰 Ahorro: {c} €/año
+🌍 CO2 evitado: {d} kg/año
+☕ ¡Unos {e} cafés gratis cada año!'.replace('{a}',a).replace('{b}',b).replace('{c}',c).replace('{d}',d).replace('{e}',e);
+  document.getElementById('res').classList.add('on');
+}
+calc();
+</script>
+</body>
+</html>

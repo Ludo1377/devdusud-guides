@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dev du Sud — Guides d'achat honnêtes</title>
-<meta name="description" content="80 guides d'achat comparatifs, honnêtes et indépendants, en 4 langues : français, anglais, espagnol, portugais.">
+<meta name="description" content="80 guides d'achat comparatifs, honnêtes et indépendants, en 5 langues : français, anglais, espagnol, portugais, arabe.">
 <style>
   :root { --ink:#0f172a; --muted:#64748b; --accent:#4f46e5; --bg:#f8fafc; --card:#fff; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -35,13 +35,14 @@
 <div class="wrap">
   <header>
     <div class="logo">Dev du Sud</div>
-    <h1>Des guides d'achat honnêtes,<br>dans 4 langues</h1>
+    <h1>Des guides d'achat honnêtes,<br>dans 5 langues</h1>
     <p>Comparatifs indépendants, testés et mis à jour chaque trimestre. Transparence totale : nos liens d'affiliation sont indiqués, nos recommandations restent libres.</p>
     <div class="langs">
       <span>🇫🇷 Français — 20 guides</span>
       <span>🇬🇧 English — 20 guides</span>
       <span>🇪🇸 Español — 20 guides</span>
       <span>🇧🇷 Português — 20 guides</span>
+      <span>🇦🇪 العربية — 5 guides</span>
     </div>
   </header>
 
@@ -117,6 +118,10 @@ const langs = [
     ["velos-electriques","Melhores Bicicletas Elétricas"],["friteuses-sans-huile","Melhores Air Fryers"],["purificateurs-dair","Melhores Purificadores de Ar"],
     ["velos-dappartement","Melhores Bicicletas Ergométricas"],["machines-a-pain","Melhores Máquinas de Pão"],["ventilateurs","Melhores Ventiladores"],
     ["chauffages-dappoint","Melhores Aquecedores Portáteis"],["robots-cuisine","Melhores Robôs de Cozinha"]
+  ]],
+  ["ar", "🇦🇪 العربية", [
+    ["smartphones","أفضل الهواتف الذكية"],["top10-ssd","أفضل أقراص SSD"],["casques-audio","أفضل سماعات الرأس"],
+    ["aspirateurs-robots","أفضل المكانس الروبوتية"],["machines-a-cafe","أفضل آلات القهوة"]
   ]]
 ];
 const other = document.getElementById("other");
@@ -130,7 +135,9 @@ const tools = document.getElementById("tools");
 const toolsData = [
   ["outils/friteuse-vs-four/","⚡","Friteuse à air vs four","Calculez vos économies d'électricité en 30 secondes"],
   ["outils/taux-horaire/","💼","Simulateur de taux horaire","Le taux minimum à facturer en freelance"],
-  ["outils/generateur-nom/","✨","Générateur de noms de business","10 idées de noms à chaque clic"]
+  ["outils/generateur-nom/","✨","Générateur de noms de business","10 idées de noms à chaque clic"],
+  ["outils-ia.html","🤖","Les 7 meilleurs outils IA","ElevenLabs, Jasper, Suno, Hostinger…"],
+  ["en/ai-tools.html","🇬🇧","Best AI tools 2026","The 7 tools actually worth it"]
 ];
 for (const [href, icon, t, s] of toolsData) {
   tools.innerHTML += `<a class="card" href="${href}"><span class="t">${icon} ${t}</span><span class="s">${s}</span></a>`;

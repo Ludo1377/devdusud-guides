@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los 10 Mejores Smartphones en 2026</title>
+<meta name="description" content="Cámara, batería, presupuesto: comparativa de los 10 mejores smartphones de 2026.">
+<style>
+  :root { --ink:#111827; --muted:#6b7280; --accent:#2563eb; --bg:#f8fafc; --card:#ffffff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 24px 18px 60px; }
+  header { text-align:center; padding: 48px 0 32px; }
+  header .logo { font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-size:.95rem; }
+  h1 { font-size: 2rem; margin: 14px 0 8px; line-height:1.25; }
+  header p { color: var(--muted); }
+  .disclosure { font-size:.8rem; color:var(--muted); background:#eef2ff; padding:10px 14px; border-radius:10px; margin-bottom:28px; }
+  .product { background:var(--card); border-radius:16px; padding:22px; margin-bottom:18px;
+             box-shadow:0 1px 3px rgba(0,0,0,.06); border:1px solid #e5e7eb; }
+  .product h2 { font-size:1.25rem; margin-bottom:6px; }
+  .rank { display:inline-block; background:var(--accent); color:#fff; font-size:.75rem; font-weight:700;
+          padding:2px 10px; border-radius:999px; margin-bottom:8px; }
+  .specs { display:flex; gap:14px; flex-wrap:wrap; margin:12px 0; }
+  .specs span { background:#f3f4f6; padding:4px 12px; border-radius:8px; font-size:.85rem; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600;
+         padding:10px 22px; border-radius:10px; margin-top:8px; }
+  .btn:hover { opacity:.9; }
+  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:40px; }
+  .verdict { font-weight:700; color:var(--accent); margin-top:30px; font-size:1.15rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Dev du Sud — Guías de compra</div>
+    <h1>Los 10 Mejores Smartphones en 2026</h1>
+    <p>Elegir tu teléfono en 2026 sin equivocarte: nuestra selección por uso y presupuesto.</p>
+  </header>
+
+  <div class="disclosure">ℹ️ Transparencia: este artículo contiene enlaces de afiliado. Si compras a través de ellos, ganamos una comisión sin coste adicional para ti. Nuestras recomendaciones siguen siendo independientes y honestas.</div>
+
+  
+  <div class="product">
+    <span class="rank">#1 — El mejor global</span>
+    <h2>Google Pixel 9</h2>
+    <p>Cámara excepcional, 7 años de actualizaciones, IA de Google integrada.</p>
+    <div class="specs"><span>6,3" OLED</span><span>50 MP</span><span>7 años de act.</span><span>~760 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_1" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#2 — Mejor económico</span>
+    <h2>Samsung Galaxy A56</h2>
+    <p>Pantalla AMOLED 120 Hz, 6 años de soporte, excelente relación calidad/precio.</p>
+    <div class="specs"><span>6,7" AMOLED</span><span>120 Hz</span><span>~440 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_2" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#3 — Mejor cámara</span>
+    <h2>iPhone 16 Pro</h2>
+    <p>Foto y vídeo de referencia, chip A18 Pro, pantalla 120 Hz.</p>
+    <div class="specs"><span>A18 Pro</span><span>48 MP</span><span>~1 300 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_3" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#4 — Mejor batería</span>
+    <h2>Xiaomi Redmi Note 14 Pro+</h2>
+    <p>5 110 mAh, carga de 120 W: dos días de autonomía.</p>
+    <div class="specs"><span>5 110 mAh</span><span>120 W</span><span>~490 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_4" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#5 — Mejor premium</span>
+    <h2>Samsung Galaxy S25 Ultra</h2>
+    <p>Lápiz S Pen, pantalla gigante, el más completo del mercado.</p>
+    <div class="specs"><span>6,9"</span><span>S Pen</span><span>~1 520 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_5" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+
+  <p class="verdict">Nuestro veredicto: el Pixel 9 sigue siendo la mejor elección global. Con presupuesto ajustado, el Galaxy A56 hace maravillas.</p>
+
+  <footer>
+    <p>Dev du Sud — Guías de compra — Guías de compra honestas, actualizadas cada trimestre.</p>
+    <p>Última actualización: <span id="date"></span></p>
+  </footer>
+</div>
+<script>
+  document.getElementById("date").textContent =
+    new Date().toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" });
+</script>
+</body>
+</html>

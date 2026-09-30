@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los 10 Mejores Televisores en 2026</title>
+<meta name="description" content="OLED, QLED, 4K: comparativa de los 10 mejores televisores de 2026 para salón y dormitorio.">
+<style>
+  :root { --ink:#111827; --muted:#6b7280; --accent:#7c3aed; --bg:#f8fafc; --card:#ffffff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 24px 18px 60px; }
+  header { text-align:center; padding: 48px 0 32px; }
+  header .logo { font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-size:.95rem; }
+  h1 { font-size: 2rem; margin: 14px 0 8px; line-height:1.25; }
+  header p { color: var(--muted); }
+  .disclosure { font-size:.8rem; color:var(--muted); background:#eef2ff; padding:10px 14px; border-radius:10px; margin-bottom:28px; }
+  .product { background:var(--card); border-radius:16px; padding:22px; margin-bottom:18px;
+             box-shadow:0 1px 3px rgba(0,0,0,.06); border:1px solid #e5e7eb; }
+  .product h2 { font-size:1.25rem; margin-bottom:6px; }
+  .rank { display:inline-block; background:var(--accent); color:#fff; font-size:.75rem; font-weight:700;
+          padding:2px 10px; border-radius:999px; margin-bottom:8px; }
+  .specs { display:flex; gap:14px; flex-wrap:wrap; margin:12px 0; }
+  .specs span { background:#f3f4f6; padding:4px 12px; border-radius:8px; font-size:.85rem; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600;
+         padding:10px 22px; border-radius:10px; margin-top:8px; }
+  .btn:hover { opacity:.9; }
+  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:40px; }
+  .verdict { font-weight:700; color:var(--accent); margin-top:30px; font-size:1.15rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Dev du Sud — Guías de compra</div>
+    <h1>Los 10 Mejores Televisores en 2026</h1>
+    <p>Cine, deporte o videojuegos: los 10 televisores que dominan el mercado este año.</p>
+  </header>
+
+  <div class="disclosure">ℹ️ Transparencia: este artículo contiene enlaces de afiliado. Si compras a través de ellos, ganamos una comisión sin coste adicional para ti. Nuestras recomendaciones siguen siendo independientes y honestas.</div>
+
+  
+  <div class="product">
+    <span class="rank">#1 — Mejor cine</span>
+    <h2>LG C4 OLED 55"</h2>
+    <p>Negros perfectos, Dolby Vision, 144 Hz para consolas.</p>
+    <div class="specs"><span>55" OLED</span><span>144 Hz</span><span>~1 200 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_1" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#2 — Mejor económico</span>
+    <h2>TCL 55C655</h2>
+    <p>QLED brillante, Google TV, valor asombroso.</p>
+    <div class="specs"><span>55" QLED</span><span>Google TV</span><span>~440 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_2" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#3 — Mejor gaming</span>
+    <h2>Samsung S90D QD-OLED</h2>
+    <p>QD-OLED deslumbrante, 144 Hz, ideal para PS5 y Xbox.</p>
+    <div class="specs"><span>QD-OLED</span><span>144 Hz</span><span>~1 420 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_3" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#4 — Mejor pantalla grande</span>
+    <h2>Hisense U7N 65"</h2>
+    <p>Mini-LED brillante, 65 pulgadas inmersivas para el salón.</p>
+    <div class="specs"><span>65" Mini-LED</span><span>~870 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_4" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+  <div class="product">
+    <span class="rank">#5 — Mejor dormitorio</span>
+    <h2>LG UT80 43"</h2>
+    <p>Compacta, inteligente, perfecta para dormitorio u oficina.</p>
+    <div class="specs"><span>43"</span><span>webOS</span><span>~330 €</span></div>
+    <a class="btn" href="ENLACE_AFILIADO_5" rel="sponsored nofollow" target="_blank">Ver precio en Amazon →</a>
+  </div>
+
+  <p class="verdict">Nuestro veredicto: el LG C4 OLED sigue siendo el rey del negro perfecto. Con presupuesto ajustado, el TCL C655 sorprende.</p>
+
+  <footer>
+    <p>Dev du Sud — Guías de compra — Guías de compra honestas, actualizadas cada trimestre.</p>
+    <p>Última actualización: <span id="date"></span></p>
+  </footer>
+</div>
+<script>
+  document.getElementById("date").textContent =
+    new Date().toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" });
+</script>
+</body>
+</html>

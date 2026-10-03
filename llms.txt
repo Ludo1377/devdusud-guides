@@ -1,0 +1,32 @@
+# Dev du Sud Guides
+
+> Dev du Sud publie des guides d’achat statiques en français, avec comparatifs Top 10, critères de choix, FAQ, données structurées JSON-LD et liens d’affiliation clairement signalés.
+
+Base URL: https://ludo1377.github.io/devdusud-guides/
+Sitemap: https://ludo1377.github.io/devdusud-guides/sitemap.xml
+
+## Pages principales
+- https://ludo1377.github.io/devdusud-guides/ — Accueil des guides d’achat Dev du Sud.
+- https://ludo1377.github.io/devdusud-guides/boutique/ — Boutique de guides numériques Dev du Sud.
+
+## Guides d’achat français par thème
+- https://ludo1377.github.io/devdusud-guides/top10-ssd/ — Comparatif honnête des 10 meilleurs disques SSD externes : vitesse, fiabilité, prix.
+- https://ludo1377.github.io/devdusud-guides/casques-audio/ — Comparatif des 10 meilleurs casques audio : Bluetooth, ANC, gaming, budget. Notre sélection honnête 2026.
+- https://ludo1377.github.io/devdusud-guides/machines-a-cafe/ — Espresso, grains, capsules : comparatif des 10 meilleures machines à café pour la maison et le bureau.
+- https://ludo1377.github.io/devdusud-guides/aspirateurs-robots/ — Laser, auto-vidage, lavage : comparatif des 10 meilleurs aspirateurs robots testés en 2026.
+- https://ludo1377.github.io/devdusud-guides/smartphones/ — Photo, batterie, budget : comparatif des 10 meilleurs smartphones de 2026 pour tous les budgets.
+- https://ludo1377.github.io/devdusud-guides/montres-connectees/ — Sport, santé, autonomie : comparatif des 10 meilleures montres connectées de 2026.
+- https://ludo1377.github.io/devdusud-guides/televiseurs/ — OLED, QLED, 4K : comparatif des 10 meilleurs téléviseurs de 2026 pour le salon et la chambre.
+- https://ludo1377.github.io/devdusud-guides/imprimantes/ — Jet d'encre, laser, réservoir : comparatif des 10 meilleures imprimantes 2026 pour la maison et le télétravail.
+- https://ludo1377.github.io/devdusud-guides/enceintes-bluetooth/ — Nomades, puissantes, waterproof : comparatif des 10 meilleures enceintes Bluetooth de 2026.
+- https://ludo1377.github.io/devdusud-guides/outils-bricolage/ — Perceuse, visseuse, boîte à outils : comparatif des 10 meilleurs outils pour bricoler en 2026.
+- https://ludo1377.github.io/devdusud-guides/gaming/ — Souris, claviers, casques, manettes : comparatif des 10 meilleurs accessoires gaming de 2026.
+- https://ludo1377.github.io/devdusud-guides/drones/ — Débutant, photo, FPV : comparatif des 10 meilleurs drones de 2026 pour tous les budgets.
+- https://ludo1377.github.io/devdusud-guides/velos-electriques/ — Ville, VTT, pliant : comparatif des 10 meilleurs vélos électriques de 2026.
+- https://ludo1377.github.io/devdusud-guides/friteuses-sans-huile/ — Air fryer : comparatif des 10 meilleures friteuses sans huile de 2026, par capacité et budget.
+- https://ludo1377.github.io/devdusud-guides/purificateurs-dair/ — Allergies, pollution, chambre : comparatif des 10 meilleurs purificateurs d'air 2026.
+- https://ludo1377.github.io/devdusud-guides/velos-dappartement/ — Cardio à la maison : comparatif des 10 meilleurs vélos d'appartement de 2026.
+- https://ludo1377.github.io/devdusud-guides/machines-a-pain/ — Pain maison sans effort : comparatif des 10 meilleures machines à pain de 2026.
+- https://ludo1377.github.io/devdusud-guides/ventilateurs/ — Chaleur, été : comparatif des 10 meilleurs ventilateurs de 2026, silencieux et efficaces.
+- https://ludo1377.github.io/devdusud-guides/chauffages-dappoint/ — Hiver, économies : comparatif des 10 meilleurs chauffages d'appoint de 2026.
+- https://ludo1377.github.io/devdusud-guides/robots-cuisine/ — Multifonctions : comparatif des 10 meilleurs robots de cuisine de 2026, par usage et budget.

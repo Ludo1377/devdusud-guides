@@ -30,3 +30,11 @@ Sitemap: https://ludo1377.github.io/devdusud-guides/sitemap.xml
 - https://ludo1377.github.io/devdusud-guides/ventilateurs/ — Chaleur, été : comparatif des 10 meilleurs ventilateurs de 2026, silencieux et efficaces.
 - https://ludo1377.github.io/devdusud-guides/chauffages-dappoint/ — Hiver, économies : comparatif des 10 meilleurs chauffages d'appoint de 2026.
 - https://ludo1377.github.io/devdusud-guides/robots-cuisine/ — Multifonctions : comparatif des 10 meilleurs robots de cuisine de 2026, par usage et budget.
+
+## Versions multilingues (mêmes 20 thèmes traduits)
+- https://ludo1377.github.io/devdusud-guides/en/ — English guides (20 topics).
+- https://ludo1377.github.io/devdusud-guides/es/ — Guías en español (20 temas).
+- https://ludo1377.github.io/devdusud-guides/pt/ — Guias em português (20 temas).
+- https://ludo1377.github.io/devdusud-guides/de/ — Ratgeber auf Deutsch (20 Themen).
+- https://ludo1377.github.io/devdusud-guides/ar/ — أدلة بالعربية (20 مواضيع).
+

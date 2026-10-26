@@ -1,0 +1,4 @@
+
+# Profil navigateur et caches : ne JAMAIS versionner (fuite de cookies/mots de passe)
+~/
+.cache/

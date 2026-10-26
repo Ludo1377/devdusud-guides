@@ -46,7 +46,7 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
   </form>
   <p id="dd-msg" style="margin:0;font-size:.85em;opacity:.8"></p>
   <p style="margin:10px 0 0;font-size:.78em;opacity:.65">Tu veux monter un site de guides comme celui-ci ?
-  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
+  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank" data-aff="systeme-io">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
   (<strong>lien d'affiliation</strong> : commission si tu t'inscris).</p>
 </aside>
 <script>
@@ -63,5 +63,17 @@ function ddCapture(f){{
 
   <footer>Affiliate-Links: Wir können eine Provision erhalten, ohne Mehrkosten für Sie.<br>Dev du Sud — Guides d'achat Die 10 besten Kaffeemaschinen 2026</footer>
 </main>
+<script>
+/* Mesure des clics d'affiliation — un événement GoatCounter par programme et par page. */
+(function(){
+  if(!window.goatcounter || !window.goatcounter.count) return;
+  var slug = location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0] || 'accueil';
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-aff]');
+    if(!a) return;
+    try { window.goatcounter.count({path:'clic/'+a.getAttribute('data-aff')+'/'+slug, title:'clic '+a.getAttribute('data-aff'), event:true}); } catch(_){}
+  }, true);
+})();
+</script>
 </body>
 </html>

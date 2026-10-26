@@ -29,7 +29,7 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
 <main>
 <div class="breadcrumb"><a href="index.html">← Accueil du comparatif</a> » 🧽 Guide d'entretien</div>
 <h1>Entretenir son velos dappartement pour le faire durer</h1>
-<p>La plupart des pannes sont évitables avec 10 minutes d'entretien par mois. Voici l'essentiel, sans jargon.</p><div class="card"><h2 style="margin-top:0;">Après chaque usage</h2><p>Essuyez la saleté et vérifiez rapidement les freins. Une saleté accumulée use les pièces mécaniques prématurément.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par semaine</h2><p>Contrôlez la pression des pneus et la tension de la chaîne. Des pneus sous-gonflés réduisent l'autonomie de 20 %.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par mois</h2><p>Lubrifiez la chaîne et resserrez les vis. Graissez les articulations pour éviter les grincements et la corrosion.</p></div><div class="card"><h2 style="margin-top:0;">Les erreurs à éviter</h2><p>Ne lavez jamais au jet haute pression : l'eau sous pression s'infiltre dans les roulements et la batterie.</p></div><div class="card"><span class="tag">Le pliant petit espace</span><h2 style="margin-top:8px;">Ultrasport F-Bike 200B</h2><p>Il se plie, coûte peu et suffit pour pédaler régulièrement devant une série.</p><p class="specs">Pliable · 8 résistances · Capteurs pulsations · ≈ 150 €</p><a class="btn" href="https://www.amazon.fr/dp/B07658P8PF?tag=devdusud-21" rel="sponsored nofollow" target="_blank">⚖️ Budget ou premium</a></div>
+<p>La plupart des pannes sont évitables avec 10 minutes d'entretien par mois. Voici l'essentiel, sans jargon.</p><div class="card"><h2 style="margin-top:0;">Après chaque usage</h2><p>Essuyez la saleté et vérifiez rapidement les freins. Une saleté accumulée use les pièces mécaniques prématurément.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par semaine</h2><p>Contrôlez la pression des pneus et la tension de la chaîne. Des pneus sous-gonflés réduisent l'autonomie de 20 %.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par mois</h2><p>Lubrifiez la chaîne et resserrez les vis. Graissez les articulations pour éviter les grincements et la corrosion.</p></div><div class="card"><h2 style="margin-top:0;">Les erreurs à éviter</h2><p>Ne lavez jamais au jet haute pression : l'eau sous pression s'infiltre dans les roulements et la batterie.</p></div><div class="card"><span class="tag">Le pliant petit espace</span><h2 style="margin-top:8px;">Ultrasport F-Bike 200B</h2><p>Il se plie, coûte peu et suffit pour pédaler régulièrement devant une série.</p><p class="specs">Pliable · 8 résistances · Capteurs pulsations · ≈ 150 €</p><a class="btn" href="https://www.amazon.fr/dp/B07658P8PF?tag=devdusud-21" rel="sponsored nofollow" target="_blank" data-aff="amazon">⚖️ Budget ou premium</a></div>
 <div style="margin-top:34px;">
 <a class="btn" style="background:var(--accent);" href="guide-achat.html">📗 Guide d'achat complet</a><a class="btn" style="background:var(--accent);" href="erreurs.html">⚠️ 7 erreurs à éviter</a><a class="btn" style="background:var(--accent);" href="comparatif.html">⚖️ Budget ou premium</a><a class="btn" style="background:var(--accent);" href="duel.html">🥊 ZIPRO One S vs MERACH PRO</a><a class="btn" style="background:var(--accent);" href="besoins.html">🎯 Selon vos besoins</a><a class="btn" style="background:var(--accent);" href="faq.html">❓ Questions fréquentes</a>
 </div>
@@ -46,7 +46,7 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
   </form>
   <p id="dd-msg" style="margin:0;font-size:.85em;opacity:.8"></p>
   <p style="margin:10px 0 0;font-size:.78em;opacity:.65">Tu veux monter un site de guides comme celui-ci ?
-  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
+  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank" data-aff="systeme-io">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
   (<strong>lien d'affiliation</strong> : commission si tu t'inscris).</p>
 </aside>
 <script>
@@ -63,5 +63,17 @@ function ddCapture(f){{
 
   <footer>Liens d'affiliation : nous pouvons toucher une commission sans surcoût pour vous.<br>Dev du Sud — Guides d'achat Les 10 Meilleurs Vélos d'Appartement en 2026</footer>
 </main>
+<script>
+/* Mesure des clics d'affiliation — un événement GoatCounter par programme et par page. */
+(function(){
+  if(!window.goatcounter || !window.goatcounter.count) return;
+  var slug = location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0] || 'accueil';
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-aff]');
+    if(!a) return;
+    try { window.goatcounter.count({path:'clic/'+a.getAttribute('data-aff')+'/'+slug, title:'clic '+a.getAttribute('data-aff'), event:true}); } catch(_){}
+  }, true);
+})();
+</script>
 </body>
 </html>

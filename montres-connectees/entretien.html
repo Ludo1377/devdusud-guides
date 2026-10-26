@@ -29,7 +29,7 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
 <main>
 <div class="breadcrumb"><a href="index.html">← Accueil du comparatif</a> » 🧽 Guide d'entretien</div>
 <h1>Entretenir son montres connectees pour le faire durer</h1>
-<p>La plupart des pannes sont évitables avec 10 minutes d'entretien par mois. Voici l'essentiel, sans jargon.</p><div class="card"><h2 style="margin-top:0;">Après chaque usage</h2><p>Rangez l'appareil dans un endroit sec, à l'abri de la poussière. Les ports encrassés sont la première cause de mauvais contacts.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par semaine</h2><p>Faites les mises à jour de sécurité et sauvegardez vos données. Une machine à jour est une machine qui ne tombe pas en panne bêtement.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par mois</h2><p>Nettoyez les grilles d'aération et vérifiez l'état des câbles. La surchauffe est la première cause de mort prématurée des composants.</p></div><div class="card"><h2 style="margin-top:0;">Les erreurs à éviter</h2><p>N'empilez jamais d'objets sur l'appareil : les grilles d'aération bloquées réduisent la durée de vie de moitié.</p></div><div class="card"><span class="tag">La montre fun petit budget</span><h2 style="margin-top:8px;">CMF Watch Pro 2</h2><p>Un choix malin pour notifications, sport léger et look personnalisable sans stress financier.</p><p class="specs">Écran AMOLED · GPS intégré · Bracelets interchangeables · ≈ 69 €</p><a class="btn" href="https://www.amazon.fr/dp/B0D5422CBB?tag=devdusud-21" rel="sponsored nofollow" target="_blank">⚖️ Budget ou premium</a></div>
+<p>La plupart des pannes sont évitables avec 10 minutes d'entretien par mois. Voici l'essentiel, sans jargon.</p><div class="card"><h2 style="margin-top:0;">Après chaque usage</h2><p>Rangez l'appareil dans un endroit sec, à l'abri de la poussière. Les ports encrassés sont la première cause de mauvais contacts.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par semaine</h2><p>Faites les mises à jour de sécurité et sauvegardez vos données. Une machine à jour est une machine qui ne tombe pas en panne bêtement.</p></div><div class="card"><h2 style="margin-top:0;">Une fois par mois</h2><p>Nettoyez les grilles d'aération et vérifiez l'état des câbles. La surchauffe est la première cause de mort prématurée des composants.</p></div><div class="card"><h2 style="margin-top:0;">Les erreurs à éviter</h2><p>N'empilez jamais d'objets sur l'appareil : les grilles d'aération bloquées réduisent la durée de vie de moitié.</p></div><div class="card"><span class="tag">La montre fun petit budget</span><h2 style="margin-top:8px;">CMF Watch Pro 2</h2><p>Un choix malin pour notifications, sport léger et look personnalisable sans stress financier.</p><p class="specs">Écran AMOLED · GPS intégré · Bracelets interchangeables · ≈ 69 €</p><a class="btn" href="https://www.amazon.fr/dp/B0D5422CBB?tag=devdusud-21" rel="sponsored nofollow" target="_blank" data-aff="amazon">⚖️ Budget ou premium</a></div>
 <div style="margin-top:34px;">
 <a class="btn" style="background:var(--accent);" href="guide-achat.html">📗 Guide d'achat complet</a><a class="btn" style="background:var(--accent);" href="erreurs.html">⚠️ 7 erreurs à éviter</a><a class="btn" style="background:var(--accent);" href="comparatif.html">⚖️ Budget ou premium</a><a class="btn" style="background:var(--accent);" href="duel.html">🥊 Garmin Venu 3 vs Apple Watch Series 10</a><a class="btn" style="background:var(--accent);" href="besoins.html">🎯 Selon vos besoins</a><a class="btn" style="background:var(--accent);" href="faq.html">❓ Questions fréquentes</a>
 </div>
@@ -46,7 +46,7 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
   </form>
   <p id="dd-msg" style="margin:0;font-size:.85em;opacity:.8"></p>
   <p style="margin:10px 0 0;font-size:.78em;opacity:.65">Tu veux monter un site de guides comme celui-ci ?
-  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
+  <a href="https://systeme.io/?sa=sa00035202271ed169b5e8bfab620ade2a906c927730" rel="sponsored noopener nofollow" target="_blank" data-aff="systeme-io">systeme.io</a> — 2 000 contacts gratuits, sans carte bancaire
   (<strong>lien d'affiliation</strong> : commission si tu t'inscris).</p>
 </aside>
 <script>
@@ -63,5 +63,17 @@ function ddCapture(f){{
 
   <footer>Liens d'affiliation : nous pouvons toucher une commission sans surcoût pour vous.<br>Dev du Sud — Guides d'achat Les 10 Meilleures Montres Connectées en 2026</footer>
 </main>
+<script>
+/* Mesure des clics d'affiliation — un événement GoatCounter par programme et par page. */
+(function(){
+  if(!window.goatcounter || !window.goatcounter.count) return;
+  var slug = location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0] || 'accueil';
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-aff]');
+    if(!a) return;
+    try { window.goatcounter.count({path:'clic/'+a.getAttribute('data-aff')+'/'+slug, title:'clic '+a.getAttribute('data-aff'), event:true}); } catch(_){}
+  }, true);
+})();
+</script>
 </body>
 </html>

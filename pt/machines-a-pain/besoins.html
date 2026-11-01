@@ -50,15 +50,25 @@ footer{text-align:center;color:#9ca3af;font-size:.85rem;margin-top:40px;padding-
   (<strong>lien d'affiliation</strong> : commission si tu t'inscris).</p>
 </aside>
 <script>
-function ddCapture(f){{
+function ddCapture(f){
   var fd=new FormData(f); fd.append('origine','accueil');
-  fetch('https://reparsite.com/subscribe.php',{{method:'POST',body:fd,mode:'no-cors'}}).catch(function(){{}});
   var m=document.getElementById('dd-msg');
-  m.textContent='Merci — vérifie ta boîte mail. / Thanks, check your inbox.';
-  m.style.color='#37b24d';
-  f.reset();
+  if(m){m.textContent='Envoi…'; m.style.color='#868e96';}
+  fetch('https://reparsite.com/subscribe.php?api=1',{method:'POST',body:fd})
+   .then(function(r){return r.json();})
+   .then(function(d){
+      if(d&&d.ok){
+        if(m){m.textContent='Merci — vérifie ta boîte mail. / Thanks, check your inbox.'; m.style.color='#37b24d';}
+        f.reset();
+      } else {
+        if(m){m.textContent='Adresse refusée. Vérifie-la et réessaie. / Address rejected, please check it.'; m.style.color='#e03131';}
+      }
+   })
+   .catch(function(){
+      if(m){m.textContent='Envoi impossible. Écris à reparsite@gmail.com / Could not send, email reparsite@gmail.com'; m.style.color='#e03131';}
+   });
   return false;
-}}
+}
 </script>
 
   <footer>Links de afiliado: podemos receber uma comissão sem custo extra para você.<br>Dev du Sud — Guias de compra As 10 Melhores Máquinas de Pão em 2026</footer>

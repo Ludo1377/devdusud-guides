@@ -920,7 +920,7 @@ footer{max-width:1100px;margin:0 auto;padding:20px;color:var(--muted);font-size:
 </aside>
 <script>
 function ddCapture(f){
-  var fd=new FormData(f); fd.append('origine','accueil');
+  var fd=new FormData(f); fd.append('origine','guides');
   var m=document.getElementById('dd-msg');
   if(m){m.textContent='Envoi…'; m.style.color='#868e96';}
   fetch('https://reparsite.com/subscribe.php?api=1',{method:'POST',body:fd})
